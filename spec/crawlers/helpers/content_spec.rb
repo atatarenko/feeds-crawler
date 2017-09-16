@@ -1,9 +1,10 @@
 require 'spec_helper'
 
-RSpec.describe Crawlers::Helpers::Document do
-  describe '.primary_content' do
+RSpec.describe Crawlers::Helpers::Content do
+  let(:dummy_class) { Class.new { include Crawlers::Helpers::Content } }
+  describe '.extract_primary_content' do
     let(:html_text) { open('spec/fixtures/page_with_content.html').read }
-    subject { described_class.primary_content(html_text) }
+    subject { dummy_class.new.extract_primary_content(html_text) }
 
     it 'extracts real content of a document' do
       is_expected.to eq('Real Content')

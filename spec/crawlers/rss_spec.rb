@@ -52,7 +52,7 @@ RSpec.describe Crawlers::Rss do
 
         before do
           allow(RSS::Parser).to receive_message_chain(:parse, :items).and_return(feed_items)
-          allow(Crawlers::Helpers::Document).to receive(:primary_content).and_return(feed_item_article)
+          allow_any_instance_of(described_class).to receive(:extract_primary_content).and_return(feed_item_article)
         end
 
         context 'when link does not leads to page with content' do
