@@ -10,9 +10,10 @@ module Crawlers
     end
 
     def articles
-      Parallel.map(rss_feed_items) do |feed_item|
+      articles = Parallel.map(rss_feed_items) do |feed_item|
         crawl_article(feed_item)
       end
+      articles.reject(&:empty?)
     end
 
     private
@@ -23,8 +24,8 @@ module Crawlers
     end
 
     def parse_feed(rss_feed)
-      RSS::Parser.parse(rss_feed).items
-    rescue StandardError
+      RSS::Parser.parse(rss_feed)&.items
+    rescue RSS::Error
       []
     end
 
