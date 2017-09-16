@@ -2,6 +2,7 @@ require 'rss'
 require 'open-uri'
 require 'ruby-readability'
 require 'sanitize'
+require 'parallel'
 
 class RssFeed
   def initialize(rss_url)
@@ -9,7 +10,7 @@ class RssFeed
   end
 
   def articles
-    rss_feed_news.map(&method(:fetch_article))
+    Parallel.map(rss_feed_news) { |news| fetch_article(news) }
   end
 
   private
