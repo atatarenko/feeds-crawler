@@ -8,7 +8,9 @@ class FeedsCrawler
   end
 
   def self.crawl_feeds_articles(rss_urls)
-    Parallel.map(rss_urls) { |url| Crawlers::Rss.new(url).articles }
+    Parallel.map(rss_urls) do |url|
+      Crawlers::Rss.new(url).articles
+    end
   end
   private_class_method :crawl_feeds_articles
 end

@@ -1,8 +1,7 @@
 require 'rss'
 require 'open-uri'
-require 'ruby-readability'
-require 'sanitize'
 require 'parallel'
+require 'crawlers/helpers/document'
 
 module Crawlers
   class Rss
@@ -11,39 +10,32 @@ module Crawlers
     end
 
     def articles
-      Parallel.map(rss_feed_news) { |news| fetch_article(news) }
+      Parallel.map(rss_feed_items) do |feed_item|
+        crawl_article(feed_item)
+      end
     end
 
     private
 
-    def rss_feed_news
+    def rss_feed_items
       rss_feed = page_content(@rss_url)
       parse_feed(rss_feed)
     end
 
     def parse_feed(rss_feed)
-      RSS::Parser.parse(rss_feed)&.items || []
-    rescue RSS::Error
+      RSS::Parser.parse(rss_feed).items
+    rescue StandardError
       []
     end
 
-    def fetch_article(news)
-      page_with_article = page_content(news.link)
-      article = Readability::Document.new(page_with_article).content
-      sanitize_article(article)
-    end
-
-    def sanitize_article(article)
-      remove_trailing_spaces(Sanitize.clean(article))
-    end
-
-    def remove_trailing_spaces(article)
-      article.strip.gsub(/(?<=\n)\s+/, '')
+    def crawl_article(feed_item)
+      page_with_article = page_content(feed_item.link)
+      Helpers::Document.new(page_with_article).primary_content
     end
 
     def page_content(page_url)
       open(page_url).read
-    rescue SocketError, OpenURI::HTTPError
+    rescue StandardError
       ''
     end
   end
