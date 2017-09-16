@@ -30,7 +30,7 @@ module Crawlers
 
     def crawl_article(feed_item)
       page_with_article = page_content(feed_item.link)
-      Helpers::Document.new(page_with_article).primary_content
+      Helpers::Document.primary_content(page_with_article)
     end
 
     def page_content(page_url)
