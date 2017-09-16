@@ -1,11 +1,11 @@
-# FeedCrawler
+# FeedsCrawler
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'feed-crawler'
+gem 'feeds-crawler'
 ```
 
 And then execute:
@@ -14,13 +14,13 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install feed-crawler
+    $ gem install feeds-crawler
 
 ## Usage
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/andrey17076/feed-crawler.
+Bug reports and pull requests are welcome on GitHub at https://github.com/andrey17076/feeds-crawler.
 
 ## License
 

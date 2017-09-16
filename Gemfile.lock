@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    feed-crawler (0.0.1)
+    feeds-crawler (0.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -64,7 +64,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.15)
-  feed-crawler!
+  feeds-crawler!
   parallel
   pry
   rake (~> 10.0)

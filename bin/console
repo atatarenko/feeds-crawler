@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'bundler/setup'
-require 'feed_crawler'
+require 'feeds_crawler'
 require 'pry'
 
 Pry.start

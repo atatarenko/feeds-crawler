@@ -1,5 +1,5 @@
 require 'bundler/setup'
-require 'feed_crawler'
+require 'feeds_crawler'
 
 RSpec.configure do |config|
   config.example_status_persistence_file_path = '.rspec_status'
