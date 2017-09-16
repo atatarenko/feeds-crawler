@@ -1,4 +1,5 @@
 # coding: utf-8
+
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
@@ -8,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Andrey Tatarenko']
   spec.email         = ['andrey17076@gmail.com']
 
-  spec.summary       = 'This gem allows to crawl and collect all you RSS news in one array.'
+  spec.summary       = 'This gem allows to crawl news articles from RSS feeds.'
   spec.homepage      = 'https://github.com/andrey17076/feed-crawler'
   spec.license       = 'MIT'
   spec.files         = `git ls-files -z`.split("\x0")
