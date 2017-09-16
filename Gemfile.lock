@@ -1,7 +1,10 @@
 PATH
   remote: .
   specs:
-    feeds-crawler (0.0.1)
+    feeds-crawler (0.2.0)
+      parallel (~> 1.12, >= 1.12.0)
+      ruby-readability (~> 0.7, >= 0.7.0)
+      sanitize (~> 4.5, >= 4.5.0)
 
 GEM
   remote: https://rubygems.org/
@@ -65,13 +68,10 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.15)
   feeds-crawler!
-  parallel
   pry
   rake (~> 10.0)
   rspec (~> 3.0)
   rubocop
-  ruby-readability
-  sanitize
 
 BUNDLED WITH
    1.15.3
