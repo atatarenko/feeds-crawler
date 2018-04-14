@@ -46,7 +46,7 @@ FeedsCrawler.crawl('first_rss_feed_url', 'second_rss_feed_url')
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/andrey17076/feeds-crawler.
+Bug reports and pull requests are welcome on GitHub at https://github.com/atatarenko/feeds-crawler.
 
 ## License
 

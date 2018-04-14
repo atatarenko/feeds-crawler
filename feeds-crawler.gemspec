@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = 'feeds-crawler'
-  spec.version       = '0.2.0'
+  spec.version       = '0.2.1'
   spec.authors       = ['Andrey Tatarenko']
   spec.email         = ['andrey17076@gmail.com']
 
@@ -18,10 +18,10 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 1.15'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
-  spec.add_development_dependency 'pry'
-  spec.add_development_dependency 'rubocop'
+  spec.add_development_dependency 'pry', '~> 0'
+  spec.add_development_dependency 'rubocop', '~> 0.54'
 
-  spec.add_runtime_dependency 'parallel',  '~> 1.12', '>= 1.12.0'
+  spec.add_runtime_dependency 'parallel', '~> 1.12', '>= 1.12.0'
   spec.add_runtime_dependency 'ruby-readability', '~> 0.7', '>= 0.7.0'
   spec.add_runtime_dependency 'sanitize', '~> 4.5', '>= 4.5.0'
 end
