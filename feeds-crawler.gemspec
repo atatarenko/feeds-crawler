@@ -23,6 +23,6 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency 'parallel', '~> 1.12', '>= 1.12.0'
   spec.add_runtime_dependency 'ruby-readability', '~> 0.7', '>= 0.7.0'
-  spec.add_runtime_dependency 'sanitize', '~> 4.5', '>= 4.5.0'
+  spec.add_runtime_dependency 'sanitize', '>= 4.5.0', '< 6.0'
 end
 
